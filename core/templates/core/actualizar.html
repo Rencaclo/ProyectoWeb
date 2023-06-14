@@ -1,0 +1,29 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% block css %}
+{% load crispy_forms_tags %}
+{% endblock %}
+{% block contenido %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-12 m-5">
+            <form action="" method="POST">
+                {% csrf_token %}
+                <table>
+                    {{ form | crispy }}
+                </table>
+                <input type="submit" class="btn btn-success" value="Actualizar">
+            </form>
+            
+            <h2>{{ msj }}</h2>
+            
+            <br><br><br><br>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+{% block js %}
+
+{% endblock %}
